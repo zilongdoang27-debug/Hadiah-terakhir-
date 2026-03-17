@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>HADIAH KECIL</title>
+
+<style>
+.judul{
+position: fixed;
+bottom: 50px;   /* jarak dari bawah */
+right: 1px;    /* jarak dari kanan */
+font-size: 24px;
+color: white;
+}
+body{
+margin:0;
+font-family:Arial;
+background:pink;
+text-align:center;
+overflow:hidden;
+}
+
+/* motif samping */
+
+body::before,
+body::after{
+content:"🌸✨💖🎀🌸✨💖🎀🌸✨";
+position:fixed;
+top:0;
+height:100%;
+width:30px;
+font-size:22px;
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+opacity:0.4;
+}
+
+body::before{
+left:0;
+}
+
+body::after{
+right:0;
+}
+
+.page{
+display:none;
+height:100vh;
+padding:40px;
+}
+
+.active{
+display:block;
+}
+
+h1{
+color:white;
+text-shadow:2px 2px 5px #ff4da6;
+}
+
+/* frame */
+
+.frame{
+border:4px solid white;
+padding:15px;
+margin-top:20px;
+background:rgba(255,255,255,0.85);
+border-radius:15px;
+display:inline-block;
+max-width:500px;
+}
+
+/* bingkai foto */
+
+.photoBox{
+position:relative;
+display:inline-block;
+margin-top:20px;
+}
+
+.photoBox img{
+width:170px;
+border-radius:20px;
+padding:12px;
+background:white;
+border:6px solid #ff69b4;
+box-shadow:0 0 15px rgba(255,105,180,0.7);
+}
+
+/* bunga merambat */
+
+.vine{
+position:absolute;
+font-size:22px;
+animation:spin 6s linear infinite;
+}
+
+.v1{top:-15px;left:-15px;color:red;}
+.v2{top:-15px;right:-15px;color:blue;}
+.v3{bottom:-15px;left:-15px;color:green;}
+.v4{bottom:-15px;right:-15px;color:purple;}
+.v5{top:50%;left:-20px;color:orange;}
+.v6{top:50%;right:-20px;color:gold;}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+/* tombol */
+
+.nextBtn{
+position:absolute;
+bottom:20px;
+right:20px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#ff4da6;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.backBtn{
+position:absolute;
+bottom:20px;
+left:20px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#ff4da6;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1a8c;
+}
+
+/* tombol musik */
+
+.musicBtn{
+position:absolute;
+top:20px;
+left:20px;
+padding:10px 20px;
+background:white;
+color:black;
+border:none;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* animasi emoji */
+
+.float{
+position:fixed;
+bottom:-50px;
+pointer-events:none;
+animation:floatUp 6s linear forwards;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-120vh);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="musik" loop>
+<source src="https://files.catbox.moe/dcy9uf.mp4">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+
+<button class="musicBtn" onclick="playMusic()">🎵 Nyalakan Lagu</button>
+
+<h1>happy birthday cah 🌸</h1>
+
+<div class="frame">
+<p>
+Mungkin ini hanya halaman kecil di web
+<p>tapi ada beberapa kata yang ingin aku sampaikan.
+ga  panjang ko, <p>hanya sekadar pengingat
+bahwa dulu kita pernah saling mengenal.dan ini mungkin bakal jadi codingan yang terkahir aku bikin untuk kmu
+</p>
+</div>
+<h1 class="judul">mas_AL</h1>
+<button class="nextBtn" onclick="nextPage()">Lanjut ➜</button>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+
+<h1>cie yang nambah dewasa</h1>
+
+<div class="frame">
+<p>
+Selamat ulang tahun ya raull🐯
+ selamat yaa sekarang kultifasi  kamu nambah 1 level,semoga kamu bahagia selalu dan di beri kelancaran dalam urusan apapun itu
+<p>minal aidzin walfaidzin ya, maaf atas kesalahan yang gua udh buat dulu
+</p>
+</div>
+
+<button class="backBtn" onclick="prevPage()">⬅ Kembali</button>
+<button class="nextBtn" onclick="nextPage()">Lanjut ➜</button>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+
+<div class="photoBox">
+<img src="https://files.catbox.moe/khsbjf.jpg">
+
+<div class="vine v1">🌺</div>
+<div class="vine v2">🌸</div>
+<div class="vine v3">🌼</div>
+<div class="vine v4">🌹</div>
+<div class="vine v5">🍀</div>
+<div class="vine v6">🌻</div>
+
+</div>
+
+<div class="frame">
+<p>
+Walaupun sekarang jalan kita tidak lagi sama,
+aku tetap percaya bahwa setiap orang
+pantas mendapatkan kehidupan yang baik.
+Termasuk kamu🫂
+</p>
+</div>
+
+<button class="backBtn" onclick="prevPage()">⬅</button>
+<button class="nextBtn" onclick="nextPage()">➜</button>
+
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+
+<div class="photoBox">
+<img src="https://files.catbox.moe/5747p5.jpg">
+<div class="vine v1">🌺</div>
+<div class="vine v2">🌸</div>
+<div class="vine v3">🌼</div>
+<div class="vine v4">🌹</div>
+</div>
+
+<div class="frame">
+<p>
+Kadang hidup memang membawa kita
+ke arah yang tidak kita rencanakan.
+Tapi semoga ke mana pun kamu melangkah,
+kamu selalu menemukan kebahagiaan itu.
+<p>
+Aku tidak berharap apa-apa dari masa lalu
+aku hanya berharap kamu baik-baik saja.
+Karena pada akhirnya,
+melihatmu bahagia itu juga sudah cukup.☺️
+</p>
+</div>
+
+<button class="backBtn" onclick="prevPage()">⬅</button>
+<button class="nextBtn" onclick="nextPage()">➜</button>
+
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+
+<div class="photoBox">
+<img src="https://files.catbox.moe/7wieyr.jpg">
+<div class="vine v1">🌺</div>
+<div class="vine v2">🌸</div>
+<div class="vine v3">🌼</div>
+<div class="vine v4">🌹</div>
+</div>
+
+<div class="frame">
+<p>
+Terima kasih sudah  pernah menjadi seseorang yang membawa warna indah.ya walaupun skrg warna itu sudah pudar, tapi senang bisa merasakan nya meski  sbntr 🫶
+</p>
+</div>
+
+<button class="backBtn" onclick="prevPage()">⬅</button>
+<button class="nextBtn" onclick="nextPage()">➜</button>
+
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+
+<div class="photoBox">
+<img src="https://files.catbox.moe/l26t59.jpg">
+<div class="vine v1">🌺</div>
+<div class="vine v2">🌸</div>
+<div class="vine v3">🌼</div>
+<div class="vine v4">🌹</div>
+</div>
+
+<div class="frame">
+<p>
+oh ya sesedih apapun kamu jangan barcode lagi yaa cah?okyy? kamu boleh melakukan apapun itu ,asalkan jangan nyakitin diri sendiri yaaa,klo di bilangin nurut, jangan bandel😗
+<p>
+  (aku bilang nya pake nada lembut)
+</p>
+</div>
+
+<button class="backBtn" onclick="prevPage()">⬅</button>
+<button class="nextBtn" onclick="nextPage()">➜</button>
+
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+
+<div class="photoBox">
+<img src="https://files.catbox.moe/p40azk.jpg">
+<div class="vine v1">🌺</div>
+<div class="vine v2">🌸</div>
+<div class="vine v3">🌼</div>
+<div class="vine v4">🌹</div>
+</div>
+
+<div class="frame">
+<p>
+Tetaplah menjadi dirimu yang ceria ya dan selalu bersinar,ya walaupun sedikit centil tapi gapapa lucu hihi,😙
+<p>
+ kamu pasti udah banyak lewatin masa masa pahit,dan itu ga mudah ,blm tentu orang lain bisa tapi kamu hebat bisa lewati semuanya 
+  <p>semangat trs yaa ul,aku tau kamu pasti bisa,ga boleh nyerah ya cantikk🫶
+</p>
+</div>
+
+<button class="backBtn" onclick="prevPage()">⬅</button>
+<button class="nextBtn" onclick="nextPage()">➜</button>
+
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="page8">
+
+<div class="photoBox">
+<img src="https://files.catbox.moe/22b03e.jpg">
+<div class="vine v1">🌺</div>
+<div class="vine v2">🌸</div>
+<div class="vine v3">🌼</div>
+<div class="vine v4">🌹</div>
+</div>
+
+<div class="frame">
+<p>
+  Kita pernah saling memiliki, walau akhirnya berpisah.
+Sekarang kamu sudah menemukan cerita baru.
+Semoga kisahmu dengannya lebih indah dan langgeng.
+</p>
+</div>
+<h1 class="judul">@doxss55</h1>
+<button class="backBtn" onclick="prevPage()">⬅ Kembali</button>
+
+</div>
+
+<script>
+
+let page=1;
+
+function nextPage(){
+document.getElementById("page"+page).classList.remove("active");
+page++;
+document.getElementById("page"+page).classList.add("active");
+}
+
+function prevPage(){
+document.getElementById("page"+page).classList.remove("active");
+page--;
+document.getElementById("page"+page).classList.add("active");
+}
+
+function playMusic(){
+document.getElementById("musik").play();
+}
+
+/* animasi emoji */
+
+function createDecoration(){
+
+const icons=["💖","🌸","✨","🎀","🎉","⭐"];
+
+const deco=document.createElement("div");
+
+deco.className="float";
+
+deco.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+
+deco.style.left=Math.random()*100+"vw";
+
+deco.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(deco);
+
+setTimeout(()=>{
+deco.remove();
+},6000);
+
+}
+
+setInterval(createDecoration,500);
+
+</script>
+
+</body>
+</html>
